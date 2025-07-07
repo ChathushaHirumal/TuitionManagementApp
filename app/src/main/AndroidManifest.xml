@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.tutionmanagementappication">
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.TutionManagementAppication"
+        tools:targetApi="31">
+
+
+        <activity
+            android:name=".LoginActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".AdminDashboardActivity" />
+        <activity android:name=".TeacherDashboardActivity"/>
+        <activity android:name=".StudentDashboardActivity" />
+        <activity android:name=".ManageUsersActivity" />
+        <activity android:name=".AssignStudentsActivity" />
+        <activity android:name=".ReportsActivity" />
+        <activity android:name=".ManageTeachersActivity" />
+        <activity android:name=".ManageStudentsActivity"/>
+        <activity android:name=".AttendanceReportActivity" />
+        <activity android:name=".ResultReportActivity" />
+        <activity android:name=".TakeAttendanceActivity" />
+        <activity android:name=".UploadAssignmentsActivity" />
+        <activity android:name=".ManageMaterialsActivity" />
+        <activity android:name=".UploadResultsActivity" />
+        <activity android:name=".StudentViewAttendanceActivity" />
+        <activity android:name=".StudentViewAssignmentsActivity" />
+        <activity android:name=".StudentViewResultsActivity" />
+        <activity android:name=".StudentSubmitAssignmentsActivity" />
+        <activity android:name=".StudentViewMaterialsActivity" />
+        <activity android:name=".StudentNotificationsActivity" />
+        <activity android:name=".AddTeacherActivity" />
+        <activity android:name=".ViewTeachersActivity" />
+        <activity android:name=".UpdateTeacherActivity" />
+        <activity android:name=".AddStudentActivity" />
+        <activity android:name=".ViewStudentsActivity" />
+        <activity android:name=".UpdateStudentActivity" />
+
+    </application>
+
+</manifest>

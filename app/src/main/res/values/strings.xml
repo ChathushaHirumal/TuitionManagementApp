@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">TutionManagementAppication</string>
+    <string-array name="roles_array">
+        <item>teacher</item>
+        <item>student</item>
+    </string-array>
+</resources>
