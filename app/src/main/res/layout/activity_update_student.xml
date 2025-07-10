@@ -11,12 +11,13 @@
         android:orientation="vertical">
 
         <EditText
-            android:id="@+id/etUsername"
+            android:id="@+id/etStudentId"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:minHeight="48dp"
             android:padding="12dp"
-            android:hint="Username"
+            android:hint="Student ID (Username)"
+            android:enabled="false"
             android:inputType="text"
             android:layout_marginBottom="16dp" />
 
@@ -27,15 +28,75 @@
             android:minHeight="48dp"
             android:padding="12dp"
             android:hint="Password"
-            android:inputType="text"
+            android:inputType="textPassword"
             android:layout_marginBottom="16dp" />
 
-        <Spinner
-            android:id="@+id/spinnerRole"
+        <EditText
+            android:id="@+id/etFirstName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:minHeight="48dp"
             android:padding="12dp"
+            android:hint="First Name"
+            android:inputType="textPersonName"
+            android:layout_marginBottom="16dp" />
+
+        <EditText
+            android:id="@+id/etLastName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:padding="12dp"
+            android:hint="Last Name"
+            android:inputType="textPersonName"
+            android:layout_marginBottom="16dp" />
+
+        <Spinner
+            android:id="@+id/spinnerGrade"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:layout_marginBottom="16dp" />
+
+        <EditText
+            android:id="@+id/etContact"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:padding="12dp"
+            android:hint="Contact Number"
+            android:inputType="phone"
+            android:layout_marginBottom="16dp" />
+
+        <EditText
+            android:id="@+id/etEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:padding="12dp"
+            android:hint="Email"
+            android:inputType="textEmailAddress"
+            android:layout_marginBottom="16dp" />
+
+        <EditText
+            android:id="@+id/etAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:padding="12dp"
+            android:hint="Address"
+            android:inputType="textPostalAddress"
+            android:layout_marginBottom="16dp" />
+
+        <EditText
+            android:id="@+id/etJoinedDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:padding="12dp"
+            android:hint="Joined Date (yyyy-mm-dd)"
+            android:focusable="false"
+            android:clickable="true"
             android:layout_marginBottom="24dp" />
 
         <Button
@@ -43,7 +104,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:minHeight="48dp"
-            android:text="Update"
+            android:text="Update Student"
             android:backgroundTint="#6200EE"
             android:textColor="#FFFFFF" />
 
@@ -52,7 +113,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:minHeight="48dp"
-            android:text="Delete"
+            android:text="Delete Student"
             android:backgroundTint="#B00020"
             android:textColor="#FFFFFF"
             android:layout_marginTop="12dp" />

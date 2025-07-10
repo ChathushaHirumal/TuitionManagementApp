@@ -1,4 +1,3 @@
-// ------------------ ViewTeachersActivity.java ------------------
 package com.example.tutionmanagementappication;
 
 import android.content.Intent;
@@ -23,7 +22,7 @@ public class ViewTeachersActivity extends AppCompatActivity {
     ListView listViewTeachers;
     ArrayList<String> teacherList;
     ArrayAdapter<String> adapter;
-    DatabaseReference usersRef;
+    DatabaseReference teachersRef;
     ArrayList<String> teacherIds;
 
     @Override
@@ -37,7 +36,7 @@ public class ViewTeachersActivity extends AppCompatActivity {
         adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, teacherList);
         listViewTeachers.setAdapter(adapter);
 
-        usersRef = FirebaseDatabase.getInstance().getReference("users");
+        teachersRef = FirebaseDatabase.getInstance().getReference("teachers");
 
         loadTeachers();
 
@@ -50,20 +49,20 @@ public class ViewTeachersActivity extends AppCompatActivity {
     }
 
     private void loadTeachers() {
-        usersRef.addListenerForSingleValueEvent(new ValueEventListener() {
+        teachersRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 teacherList.clear();
                 teacherIds.clear();
-                for (DataSnapshot userSnap : snapshot.getChildren()) {
-                    String role = userSnap.child("role").getValue(String.class);
-                    if ("teacher".equals(role)) {
-                        String username = userSnap.child("username").getValue(String.class);
-                        String password = userSnap.child("password").getValue(String.class);
-                        teacherList.add("Username: " + username + "\nPassword: " + password);
-                        teacherIds.add(userSnap.getKey());
-                    }
+
+                for (DataSnapshot teacherSnap : snapshot.getChildren()) {
+                    String fullName = teacherSnap.child("fullName").getValue(String.class);
+                    String subject = teacherSnap.child("subject").getValue(String.class);
+
+                    teacherList.add("Name: " + fullName + "\nSubject: " + subject);
+                    teacherIds.add(teacherSnap.getKey()); // Teacher ID (same as userId)
                 }
+
                 adapter.notifyDataSetChanged();
             }
 

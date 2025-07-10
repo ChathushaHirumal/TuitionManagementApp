@@ -1,9 +1,7 @@
-// ------------------ ViewStudentsActivity.java ------------------
 package com.example.tutionmanagementappication;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -18,7 +16,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
 public class ViewStudentsActivity extends AppCompatActivity {
 
@@ -26,7 +23,7 @@ public class ViewStudentsActivity extends AppCompatActivity {
     ArrayList<String> studentList;
     ArrayList<String> studentIds;
     ArrayAdapter<String> adapter;
-    DatabaseReference usersRef;
+    DatabaseReference studentsRef;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +36,7 @@ public class ViewStudentsActivity extends AppCompatActivity {
         adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, studentList);
         listView.setAdapter(adapter);
 
-        usersRef = FirebaseDatabase.getInstance().getReference("users");
+        studentsRef = FirebaseDatabase.getInstance().getReference("students");
 
         loadStudents();
 
@@ -52,27 +49,27 @@ public class ViewStudentsActivity extends AppCompatActivity {
     }
 
     private void loadStudents() {
-        usersRef.orderByChild("role").equalTo("student")
-                .addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        studentList.clear();
-                        studentIds.clear();
-                        for (DataSnapshot userSnapshot : snapshot.getChildren()) {
-                            String username = userSnapshot.child("username").getValue(String.class);
-                            String password = userSnapshot.child("password").getValue(String.class);
-                            if (username != null && password != null) {
-                                studentList.add("Username: " + username + "\nPassword: " + password);
-                                studentIds.add(userSnapshot.getKey());
-                            }
-                        }
-                        adapter.notifyDataSetChanged();
-                    }
+        studentsRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                studentList.clear();
+                studentIds.clear();
+                for (DataSnapshot studentSnap : snapshot.getChildren()) {
+                    String firstName = studentSnap.child("firstName").getValue(String.class);
+                    String lastName = studentSnap.child("lastName").getValue(String.class);
+                    String grade = studentSnap.child("grade").getValue(String.class);
 
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError error) {
-                        Toast.makeText(ViewStudentsActivity.this, "Failed to load students", Toast.LENGTH_SHORT).show();
-                    }
-                });
+                    String fullName = (firstName != null ? firstName : "") + " " + (lastName != null ? lastName : "");
+                    studentList.add("Name: " + fullName.trim() + "\nGrade: " + (grade != null ? grade : "N/A"));
+                    studentIds.add(studentSnap.getKey());
+                }
+                adapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Toast.makeText(ViewStudentsActivity.this, "Failed to load students", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }
