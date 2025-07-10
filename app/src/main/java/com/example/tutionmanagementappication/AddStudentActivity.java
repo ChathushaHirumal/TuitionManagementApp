@@ -34,7 +34,7 @@ public class AddStudentActivity extends AppCompatActivity {
         etPassword = findViewById(R.id.etPassword);
         etFirstName = findViewById(R.id.etFirstName);
         etLastName = findViewById(R.id.etLastName);
-        spinnerGrade = findViewById(R.id.spinnerGrade); // Changed from EditText to Spinner
+        spinnerGrade = findViewById(R.id.spinnerGrade);
         etContact = findViewById(R.id.etContact);
         etEmail = findViewById(R.id.etEmail);
         etAddress = findViewById(R.id.etAddress);
