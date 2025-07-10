@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:gravity="center"
+    android:background="#ffffff">
+
+    <EditText
+        android:id="@+id/etStudentId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Student ID"
+        android:layout_marginBottom="16dp"
+        android:padding="12dp"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/etTeacherId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Teacher ID"
+        android:layout_marginBottom="24dp"
+        android:padding="12dp"
+        android:inputType="text" />
+
+    <Button
+        android:id="@+id/btnAssign"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Assign Student"
+        android:backgroundTint="#6200EE"
+        android:textColor="#ffffff" />
+</LinearLayout>
