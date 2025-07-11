@@ -19,7 +19,7 @@ public class AssignStudentsActivity extends AppCompatActivity {
     Button btnSave;
 
     DatabaseReference studentsRef, teachersRef, assignRef;
-    ArrayList<String> studentIds = new ArrayList<>();
+    ArrayList< String> studentIds = new ArrayList<>();
     ArrayList<String> teacherIds = new ArrayList<>();
     ArrayAdapter<String> studentAdapter, subjectAdapter, teacherAdapter;
 
