@@ -3,6 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_MEDIA_DOCUMENTS" />
+
 
     <application
         android:allowBackup="true"
@@ -17,13 +20,15 @@
 
 
         <activity
-            android:name=".LoginActivity"
+            android:name=".WelcomeActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".LoginActivity" />
         <activity android:name=".AdminDashboardActivity" />
         <activity android:name=".TeacherDashboardActivity"/>
         <activity android:name=".StudentDashboardActivity" />

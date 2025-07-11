@@ -1,7 +1,20 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
+
     <!-- Base application theme. -->
     <style name="Base.Theme.TutionManagementAppication" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your dark theme here. -->
-        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
     </style>
+
+    <!-- App theme used in Manifest -->
+    <style name="Theme.TutionManagementAppication" parent="Base.Theme.TutionManagementAppication" />
+
+    <style name="ThemedDashboardButton">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">48dp</item>
+        <item name="android:layout_marginBottom">16dp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:background">@drawable/rounded_button</item>
+    </style>
+
+
 </resources>

@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <!-- Theme Colors -->
+    <color name="primary">#FF6F61</color>        <!-- Soft Coral Pink -->
+    <color name="primaryDark">#D9534F</color>    <!-- Darker shade for buttons -->
+    <color name="accent">#FAD4D4</color>         <!-- Light background pink -->
+    <color name="textDark">#333333</color>       <!-- Title and bold text -->
+    <color name="textLight">#666666</color>      <!-- Subtitle/secondary text -->
+    <color name="hintColor">#444444</color>      <!-- Darker placeholder -->
+
+    <!-- Basic Colors -->
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
 </resources>

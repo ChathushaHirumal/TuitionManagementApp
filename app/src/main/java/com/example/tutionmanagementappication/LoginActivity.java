@@ -25,7 +25,7 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main); // If you rename the layout to activity_login.xml, update this line too
+        setContentView(R.layout.activity_login);// If you rename the layout to activity_login.xml, update this line too
 
         // Link UI components
         etUsername = findViewById(R.id.etUsername);
@@ -92,7 +92,9 @@ public class LoginActivity extends AppCompatActivity {
                 return;
         }
 
+        intent.putExtra("studentId", etUsername.getText().toString().trim());
         startActivity(intent);
+
         finish();
     }
 }

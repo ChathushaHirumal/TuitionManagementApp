@@ -3,61 +3,116 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="24dp"
-    android:background="#F2F2F2">
+    android:background="@color/white">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:gravity="center_horizontal">
+        android:orientation="vertical">
 
-        <TextView
+        <!-- Clean back button -->
+        <Button
+            android:id="@+id/btnBack"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Welcome, Student"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            android:layout_marginBottom="32dp" />
+            android:layout_height="40dp"
+            android:text="←"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:background="@drawable/rounded_button"
+            android:layout_marginBottom="16dp"
+            android:paddingHorizontal="20dp" />
 
-        <Button
-            android:id="@+id/btnViewAttendance"
+        <!-- Welcome banner full width -->
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="View Attendance"
-            android:layout_marginBottom="16dp" />
+            android:orientation="horizontal"
+            android:background="@color/primary"
+            android:padding="16dp"
+            android:layout_marginBottom="32dp"
+            android:gravity="center_vertical">
 
-        <Button
-            android:id="@+id/btnViewAssignments"
+            <!-- Left side text -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="September 4, 2023"
+                    android:textColor="@color/white"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/tvWelcomeName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Welcome back!"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:layout_marginTop="8dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Always stay updated in your student portal"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    android:layout_marginTop="4dp" />
+            </LinearLayout>
+
+            <!-- Right side image -->
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/ic_student_avatar"
+                android:layout_marginStart="16dp"
+                android:scaleType="centerCrop"
+                android:background="@drawable/rounded_button"
+                android:padding="8dp" />
+        </LinearLayout>
+
+        <!-- Dashboard buttons -->
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="View Assignments"
-            android:layout_marginBottom="16dp" />
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
 
-        <Button
-            android:id="@+id/btnViewResults"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="View Results"
-            android:layout_marginBottom="16dp" />
+            <Button
+                android:id="@+id/btnViewAttendance"
+                style="@style/ThemedDashboardButton"
+                android:text="View Attendance" />
 
-        <Button
-            android:id="@+id/btnSubmitAssignments"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Submit Assignments"
-            android:layout_marginBottom="16dp" />
+            <Button
+                android:id="@+id/btnViewAssignments"
+                style="@style/ThemedDashboardButton"
+                android:text="View Assignments" />
 
-        <Button
-            android:id="@+id/btnViewMaterials"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="View Course Materials"
-            android:layout_marginBottom="16dp" />
+            <Button
+                android:id="@+id/btnViewResults"
+                style="@style/ThemedDashboardButton"
+                android:text="View Results" />
 
-        <Button
-            android:id="@+id/btnNotifications"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Notifications" />
+            <Button
+                android:id="@+id/btnSubmitAssignments"
+                style="@style/ThemedDashboardButton"
+                android:text="Submit Assignments" />
+
+            <Button
+                android:id="@+id/btnViewMaterials"
+                style="@style/ThemedDashboardButton"
+                android:text="View Course Materials" />
+
+            <Button
+                android:id="@+id/btnNotifications"
+                style="@style/ThemedDashboardButton"
+                android:text="Notifications" />
+        </LinearLayout>
     </LinearLayout>
 </ScrollView>
